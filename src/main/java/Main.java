@@ -138,6 +138,24 @@ public class Main {
         return true;
     }
 
+    static boolean iterativeBinarySearch(int[] array, int x, int left, int right) {
+        left = 0;
+        right = array.length;
+        while (left <= right) {
+        int mid = (left + right) / 2;
+
+            if (array[mid] == x) {
+                return true;
+            } else if (x < array[mid]) {
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+
+        }
+        return true;
+    }
+
 
 
     public void generateRandomArray() {
